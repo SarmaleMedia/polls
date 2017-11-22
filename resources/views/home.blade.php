@@ -15,10 +15,16 @@
                     @endif
 
                     @foreach ($groups as $groupName => $group)
-                        <table class="table">
+                        <table class="table table-sm">
+                            <col width="10%">
+                            <col width="50%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
                             <thead>
                                 <tr>
-                                    <th colspan="4">Group {{ $groupName }}</th>
+                                    <th colspan="6">Group {{ $groupName }}</th>
                                 </tr>
                                 <tr>
                                     <th>#</th>
@@ -31,7 +37,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($group as $team)
-                                    <tr>
+                                    <tr class="{{ ($team['wc_group_rank'] <= 2) ? 'table-success' : 'table-danger' }}">
                                         <td>{{ $team['wc_group_rank'] }}</td>
                                         <td>{{ $team['name'] }}</td>
                                         <td>0</td>
