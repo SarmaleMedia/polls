@@ -14,6 +14,36 @@
                         </div>
                     @endif
 
+                    @foreach ($groups as $groupName => $group)
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Group {{ $groupName }}</th>
+                                </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Country</th>
+                                    <th>GP</th>
+                                    <th>GS</th>
+                                    <th>GR</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($group as $team)
+                                    <tr>
+                                        <td>{{ $team['wc_group_rank'] }}</td>
+                                        <td>{{ $team['name'] }}</td>
+                                        <td>0</td>
+                                        <td>{{ $team['goals_scored'] }}</td>
+                                        <td>{{ $team['goals_against'] }}</td>
+                                        <td>{{ $team['wc_group_points'] }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endforeach
+
                     You are logged in!
                 </div>
             </div>
