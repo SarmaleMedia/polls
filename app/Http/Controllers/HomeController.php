@@ -8,8 +8,6 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -17,12 +15,15 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['user', 'manager', 'admin']);
+
         return view('home');
     }
 }
