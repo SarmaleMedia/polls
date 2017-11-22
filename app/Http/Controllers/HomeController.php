@@ -3,6 +3,7 @@
 namespace WC2018\Http\Controllers;
 
 use Illuminate\Http\Request;
+use WC2018\Models\Team;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['user', 'manager', 'admin']);
+        $groups = Team::getGroupsWithRank();
 
-        return view('home');
+        return view('home', compact('groups'));
     }
 }
