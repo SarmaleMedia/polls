@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use WC2018\Models\Stadium;
+use WC2018\Models\Team;
 
 class MatchTableSeeder extends Seeder
 {
+    public $teams = [];
+    public $stadiums = [];
+
     /**
      * Run the database seeds.
      *
@@ -11,8 +16,19 @@ class MatchTableSeeder extends Seeder
      */
     public function run()
     {
+        $teams = Team::all();
+        foreach ($teams as $team) {
+            $this->teams[$team->name] = $team->id;
+        }
+
+        $stadiums = Stadium::all();
+        foreach ($stadiums as $stadium) {
+            $this->stadiums[$stadium->name] = $stadium->id;
+        }
+
         DB::table('matches')->insert(self::$matchesGroupA);
         DB::table('matches')->insert(self::$matchesGroupB);
+        DB::table('matches')->insert($this->getGroupC($this->teams, $this->stadiums));
     }
 
     public static $matchesGroupA = [
@@ -104,4 +120,37 @@ class MatchTableSeeder extends Seeder
             'round'             => 'Group B'
         ],
     ];
+
+    public function getGroupC($teams, $stadiums) {
+        return [
+            [
+                'stadium_id'        => $stadiums["Kazan Arena"],
+                'first_team_id'     => $teams["France"],
+                'second_team_id'    => $teams["Australia"],
+                'start_time'        => '2018-06-16 11:00:00',
+                'round'             => 'Group C'
+            ],
+            [
+                'stadium_id'        => $stadiums["Mordovia Arena"],
+                'first_team_id'     => $teams["Peru"],
+                'second_team_id'    => $teams["Denmark"],
+                'start_time'        => '2018-06-16 17:00:00',
+                'round'             => 'Group C'
+            ],
+            [
+                'stadium_id'        => $stadiums["Cosmos Arena"],
+                'first_team_id'     => $teams["Denmark"],
+                'second_team_id'    => $teams["Australia"],
+                'start_time'        => '2018-06-21 13:00:00',
+                'round'             => 'Group C'
+            ],
+            [
+                'stadium_id'        => $stadiums["Ekaterinburg Arena"],
+                'first_team_id'     => $teams["France"],
+                'second_team_id'    => $teams["Peru"],
+                'start_time'        => '2018-06-21 16:00:00',
+                'round'             => 'Group C'
+            ],
+        ];
+    }
 }

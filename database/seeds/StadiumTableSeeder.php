@@ -59,7 +59,7 @@ class StadiumTableSeeder extends Seeder
         ],
         [
             'id'        => 8,
-            'name'      => 'Samara Arena',
+            'name'      => 'Cosmos Arena',
             'capacity'  => 44918,
             'city'      => 'Samara'
         ],
