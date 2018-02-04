@@ -4,6 +4,31 @@ namespace WC2018\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * WC2018\Models\Team
+ *
+ * @property int $id
+ * @property string $name
+ * @property int $goals_scored
+ * @property int $goals_against
+ * @property string|null $wc_group
+ * @property int|null $wc_group_rank
+ * @property int $wc_group_points
+ * @property int $champion
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereChampion($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereGoalsAgainst($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereGoalsScored($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereWcGroup($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereWcGroupPoints($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereWcGroupRank($value)
+ * @mixin \Eloquent
+ */
 class Team extends Model
 {
     protected $fillable = [
