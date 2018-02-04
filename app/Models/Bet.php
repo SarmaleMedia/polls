@@ -35,5 +35,16 @@ class Bet extends Model
         'result'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToOne
+     */
+    public function user()
+    {
+        return $this->belongsToOne(User::class);
+    }
 
+    public static function getBetsByUser(int $userId)
+    {
+        return $this->all()->whereUserId($userId);
+    }
 }

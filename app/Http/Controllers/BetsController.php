@@ -24,7 +24,7 @@ class BetsController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'manager', 'admin']);
         $user = Auth::user();
-        $bets = Team::getUserBets($user->id);
+        $bets = Bet::getBetsByUser($user->id);
 
         return view('bets', compact('bets'));
     }
