@@ -45,6 +45,6 @@ class Bet extends Model
 
     public static function getBetsByUser(int $userId)
     {
-        return $this->all()->whereUserId($userId);
+        return self::all()->whereUserId($userId);
     }
 }

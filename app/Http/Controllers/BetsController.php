@@ -3,6 +3,8 @@
 namespace WC2018\Http\Controllers;
 
 use Illuminate\Http\Request;
+use WC2018\Models\Bet;
+
 
 class BetsController extends Controller
 {
