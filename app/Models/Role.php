@@ -2,6 +2,7 @@
 
 namespace WC2018\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -13,11 +14,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\WC2018\Models\User[] $users
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Role whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Role whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Role whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Role whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Role whereUpdatedAt($value)
+ * @method static Builder|Role whereCreatedAt($value)
+ * @method static Builder|Role whereDescription($value)
+ * @method static Builder|Role whereId($value)
+ * @method static Builder|Role whereName($value)
+ * @method static Builder|Role whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Role extends Model

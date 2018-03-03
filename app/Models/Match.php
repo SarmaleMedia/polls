@@ -2,6 +2,7 @@
 
 namespace WC2018\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -18,17 +19,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property int $stadium_id
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereFirstTeamGoals($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereFirstTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereResult($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereRound($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereSecondTeamGoals($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereSecondTeamId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereStadiumId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereStartTime($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Match whereUpdatedAt($value)
+ * @method static Builder|Match whereCreatedAt($value)
+ * @method static Builder|Match whereFirstTeamGoals($value)
+ * @method static Builder|Match whereFirstTeamId($value)
+ * @method static Builder|Match whereId($value)
+ * @method static Builder|Match whereResult($value)
+ * @method static Builder|Match whereRound($value)
+ * @method static Builder|Match whereSecondTeamGoals($value)
+ * @method static Builder|Match whereSecondTeamId($value)
+ * @method static Builder|Match whereStadiumId($value)
+ * @method static Builder|Match whereStartTime($value)
+ * @method static Builder|Match whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Match extends Model
