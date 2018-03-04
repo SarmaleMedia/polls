@@ -32,7 +32,7 @@ class MatchTableSeeder extends Seeder
         ],
         [
             'stadium_id'        => 2,
-            'first_team_id'     => 1,
+            'first_team_id'     => 10,
             'second_team_id'    => 23,
             'start_time'        => '2018-06-19 19:00:00',
             'round'             => 'Group A'
@@ -47,7 +47,7 @@ class MatchTableSeeder extends Seeder
         [
             'stadium_id'        => 8,
             'first_team_id'     => 32,
-            'second_team_id'    => 1,
+            'second_team_id'    => 10,
             'start_time'        => '2018-06-25 15:00:00',
             'round'             => 'Group A'
         ],

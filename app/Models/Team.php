@@ -37,10 +37,16 @@ class Team extends Model
 
     public static function getGroupsWithRank(): array
     {
-         $teams = self::orderBy('wc_group', 'asc')->orderBy('wc_group_rank', 'asc')->get()->toArray();
+         $teams = self::orderBy('wc_group', 'asc')
+             ->orderBy('wc_group_rank', 'asc')
+             ->get()
+             ->toArray();
 
         $groupRanking = [];
         foreach ($teams as $team) {
+            $team['matches'] = Match::whereRaw(' (`matches`.first_team_id = ' . $team['id']
+                . ' OR `matches`.second_team_id = ' . $team['id'] . ' ) AND `matches`.result IS NOT NULL' )
+                ->count();
             $groupRanking[$team['wc_group']][] = $team;
         }
 

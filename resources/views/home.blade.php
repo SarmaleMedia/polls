@@ -40,7 +40,7 @@
                                     <tr class="{{ ($team['wc_group_rank'] <= 2) ? 'table-success' : 'table-danger' }}">
                                         <td>{{ $team['wc_group_rank'] }}</td>
                                         <td>{{ $team['name'] }}</td>
-                                        <td>0</td>
+                                        <td>{{ $team['matches'] }}</td>
                                         <td>{{ $team['goals_scored'] }}</td>
                                         <td>{{ $team['goals_against'] }}</td>
                                         <td>{{ $team['wc_group_points'] }}</td>
