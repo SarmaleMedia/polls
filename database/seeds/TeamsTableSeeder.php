@@ -16,100 +16,228 @@ class TeamsTableSeeder extends Seeder
 
     public static $teams = [
         [
-            "name" => 'Belgium'
+            'id'            => 1,
+            "name"          => 'Belgium',
+            "flag_path"     => 'images/flags/Belgium_flag.png',
+            "wc_group"      => 'G',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Croatia'
+            'id'            => 2,
+            "name"          => 'Croatia',
+            "flag_path"     => 'images/flags/Croatia_flag.png',
+            "wc_group"      => 'D',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Denmark'
+            'id'            => 3,
+            "name"          => 'Denmark',
+            "flag_path"     => 'images/flags/Denmark_flag.png',
+            "wc_group"      => 'C',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'England'
+            'id'            => 4,
+            "name"          => 'England',
+            "flag_path"     => 'images/flags/England_flag.png',
+            "wc_group"      => 'G',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'France'
+            'id'            => 5,
+            "name"          => 'France',
+            "flag_path"     => 'images/flags/France_flag.png',
+            "wc_group"      => 'C',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Germany'
+            'id'            => 6,
+            "name"          => 'Germany',
+            "flag_path"     => 'images/flags/Germany_flag.png',
+            "wc_group"      => 'F',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Iceland'
+            'id'            => 7,
+            "name"          => 'Iceland',
+            "flag_path"     => 'images/flags/Iceland_flag.png',
+            "wc_group"      => 'D',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Poland'
+            'id'            => 8,
+            "name"          => 'Poland',
+            "flag_path"     => 'images/flags/Poland_flag.png',
+            "wc_group"      => 'H',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Portugal'
+            'id'            => 9,
+            "name"          => 'Portugal',
+            "flag_path"     => 'images/flags/Portugal_flag.png',
+            "wc_group"      => 'B',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Russia'
+            'id'            => 10,
+            "name"          => 'Russia',
+            "flag_path"     => 'images/flags/Russia_flag.png',
+            "wc_group"      => 'A',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Serbia'
+            'id'            => 11,
+            "name"          => 'Serbia',
+            "flag_path"     => 'images/flags/Serbia_flag.png',
+            "wc_group"      => 'E',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'Spain'
+            'id'            => 12,
+            "name"          => 'Spain',
+            "flag_path"     => 'images/flags/Spain_flag.png',
+            "wc_group"      => 'B',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Sweden'
+            'id'            => 13,
+            "name"          => 'Sweden',
+            "flag_path"     => 'images/flags/Sweden_flag.png',
+            "wc_group"      => 'F',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Switzerland'
+            'id'            => 14,
+            "name"          => 'Switzerland',
+            "flag_path"     => 'images/flags/Switzerland_flag.png',
+            "wc_group"      => 'E',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Costa Rica'
+            'id'            => 15,
+            "name"          => 'Costa Rica',
+            "flag_path"     => 'images/flags/Costa_Rica_flag.png',
+            "wc_group"      => 'E',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Mexico'
+            'id'            => 16,
+            "name"          => 'Mexico',
+            "flag_path"     => 'images/flags/Mexico_flag.png',
+            "wc_group"      => 'F',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Panama'
+            'id'            => 17,
+            "name"          => 'Panama',
+            "flag_path"     => 'images/flags/Panama_flag.png',
+            "wc_group"      => 'G',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Australia'
+            'id'            => 18,
+            "name"          => 'Australia',
+            "flag_path"     => 'images/flags/Australia_flag.png',
+            "wc_group"      => 'C',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Iran'
+            'id'            => 19,
+            "name"          => 'Iran',
+            "flag_path"     => 'images/flags/Iran_flag.png',
+            "wc_group"      => 'B',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'Japan'
+            'id'            => 20,
+            "name"          => 'Japan',
+            "flag_path"     => 'images/flags/Japan_flag.png',
+            "wc_group"      => 'H',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'Korea Republic'
+            'id'            => 21,
+            "name"          => 'Korea Republic',
+            "flag_path"     => 'images/flags/South_Korea_flag.png',
+            "wc_group"      => 'F',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'Saudi Arabia'
+            'id'            => 22,
+            "name"          => 'Saudi Arabia',
+            "flag_path"     => 'images/flags/Saudi_Arabia_flag.png',
+            "wc_group"      => 'A',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Egypt'
+            'id'            => 23,
+            "name"          => 'Egypt',
+            "flag_path"     => 'images/flags/Egypt_flag.png',
+            "wc_group"      => 'A',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Morocco'
+            'id'            => 24,
+            "name"          => 'Morocco',
+            "flag_path"     => 'images/flags/Morocco_flag.png',
+            "wc_group"      => 'B',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Nigeria'
+            'id'            => 25,
+            "name"          => 'Nigeria',
+            "flag_path"     => 'images/flags/Nigeria_flag.png',
+            "wc_group"      => 'D',
+            "wc_group_rank" => '4',
         ],
         [
-            "name" => 'Senegal'
+            'id'            => 26,
+            "name"          => 'Senegal',
+            "flag_path"     => 'images/flags/Senegal_flag.png',
+            "wc_group"      => 'H',
+            "wc_group_rank" => '2',
         ],
         [
-            "name" => 'Tunisia'
+            'id'            => 27,
+            "name"          => 'Tunisia',
+            "flag_path"     => 'images/flags/Tunisia_flag.png',
+            "wc_group"      => 'G',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Argentina'
+            'id'            => 28,
+            "name"          => 'Argentina',
+            "flag_path"     => 'images/flags/Argentina_flag.png',
+            "wc_group"      => 'D',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Brazil'
+            'id'            => 29,
+            "name"          => 'Brazil',
+            "flag_path"     => 'images/flags/Brazil_flag.png',
+            "wc_group"      => 'E',
+            "wc_group_rank" => '1',
         ],
         [
-            "name" => 'Colombia'
+            'id'            => 30,
+            "name"          => 'Colombia',
+            "flag_path"     => 'images/flags/Colombia_flag.png',
+            "wc_group"      => 'H',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Peru'
+            'id'            => 31,
+            "name"          => 'Peru',
+            "flag_path"     => 'images/flags/Peru_flag.png',
+            "wc_group"      => 'C',
+            "wc_group_rank" => '3',
         ],
         [
-            "name" => 'Uruguay'
+            'id'            => 32,
+            "name"          => 'Uruguay',
+            "flag_path"     => 'images/flags/Uruguay_flag.png',
+            "wc_group"      => 'A',
+            "wc_group_rank" => '4',
         ]
     ];
 }

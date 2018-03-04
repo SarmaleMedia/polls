@@ -14,7 +14,41 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @foreach ($groups as $groupName => $group)
+                        <table class="table table-sm">
+                            <col width="10%">
+                            <col width="50%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group {{ $groupName }}</th>
+                                </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Country</th>
+                                    <th>GP</th>
+                                    <th>GS</th>
+                                    <th>GR</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($group as $team)
+                                    <tr class="{{ ($team['wc_group_rank'] <= 2) ? 'table-success' : 'table-danger' }}">
+                                        <td>{{ $team['wc_group_rank'] }}</td>
+                                        <td>{{ $team['name'] }}</td>
+                                        <td>{{ $team['matches'] }}</td>
+                                        <td>{{ $team['goals_scored'] }}</td>
+                                        <td>{{ $team['goals_against'] }}</td>
+                                        <td>{{ $team['wc_group_points'] }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endforeach
                 </div>
             </div>
         </div>

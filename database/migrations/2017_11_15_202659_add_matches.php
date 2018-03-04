@@ -17,9 +17,9 @@ class AddMatches extends Migration
             $table->increments('id');
             $table->integer('first_team_id')->unsigned();
             $table->integer('second_team_id')->unsigned();
-            $table->integer('first_team_goals');
-            $table->integer('second_team_goals');
-            $table->string('result', 10);
+            $table->integer('first_team_goals')->nullable();
+            $table->integer('second_team_goals')->nullable();
+            $table->string('result', 10)->nullable();
             $table->timestamp('start_time');
             $table->timestamps();
 
