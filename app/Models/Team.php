@@ -46,4 +46,17 @@ class Team extends Model
 
         return $groupRanking;
     }
+
+    public static function getTeamsForMatches()
+    {
+        $teams = self::all();
+        $parsedTeams = [];
+
+        foreach ($teams as $team) {
+            $parsedTeams[$team->id]['name'] = $team->name;
+            $parsedTeams[$team->id]['flag'] = $team->flag_path;
+        }
+
+        return $parsedTeams;
+    }
 }
