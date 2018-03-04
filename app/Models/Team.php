@@ -45,7 +45,8 @@ class Team extends Model
         $groupRanking = [];
         foreach ($teams as $team) {
             $team['matches'] = Match::whereRaw(' (`matches`.first_team_id = ' . $team['id']
-                . ' OR `matches`.second_team_id = ' . $team['id'] . ' ) AND `matches`.result IS NOT NULL' )
+                . ' OR `matches`.second_team_id = ' . $team['id'] . ' ) '
+                . ' AND `matches`.result IS NOT NULL AND `matches`.round LIKE "Group%"' )
                 ->count();
             $groupRanking[$team['wc_group']][] = $team;
         }
