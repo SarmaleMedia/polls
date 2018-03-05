@@ -35,4 +35,9 @@ class BetsController extends Controller
 
         return view('matches.bets', ['groups' => $bets, 'complexGame' => $complexGame]);
     }
+
+    public function saveBets(Request $request)
+    {
+        $user = Auth::user();
+    }
 }

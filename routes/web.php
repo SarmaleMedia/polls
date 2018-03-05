@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/matches', 'MatchesController@list')->name('matches');
 Route::get('/bets', 'BetsController@index')->name('bets');
+Route::post('/bets', 'BetsController@saveBets')->name('save_bets');
