@@ -3,7 +3,9 @@
 namespace WC2018\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use WC2018\Models\Bet;
+use WC2018\Models\Match;
 
 
 class BetsController extends Controller
@@ -26,8 +28,11 @@ class BetsController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'manager', 'admin']);
         $user = Auth::user();
-        $bets = Bet::getBetsByUser($user->id);
+        $bets = Bet::getBetsForDisplay($user->id);
 
-        return view('bets', compact('bets'));
+        // Get game complexity
+        $complexGame = true;
+
+        return view('matches.bets', ['groups' => $bets, 'complexGame' => $complexGame]);
     }
 }
