@@ -4,6 +4,7 @@ namespace WC2018\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use WC2018\Http\Requests\BetsFormRequest;
 use WC2018\Models\Bet;
 use WC2018\Models\Match;
 
@@ -36,8 +37,10 @@ class BetsController extends Controller
         return view('matches.bets', ['groups' => $bets, 'complexGame' => $complexGame]);
     }
 
-    public function saveBets(Request $request)
+    public function saveBets(BetsFormRequest $request)
     {
-        $user = Auth::user();
+        echo '<pre>';
+        print_r($request->all());
+        die();
     }
 }

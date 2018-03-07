@@ -65,6 +65,7 @@
                                 </tbody>
                             </table>
                         @endforeach
+                        <input type="submit" class="btn-primary" value="Save">
                     </form>
                 </div>
             </div>
