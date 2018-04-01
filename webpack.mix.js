@@ -11,5 +11,15 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+const fs = require('fs');
+
+var scssFiles = fs.readdirSync('resources/assets/sass/');
+
+arrayFiles = new Array();
+
+for (var i in scssFiles) {
+    mix.sass('resources/assets/sass/' + scssFiles[i], 'public/css');
+}
+
+mix.js('resources/assets/js/app.js', 'public/js');
+

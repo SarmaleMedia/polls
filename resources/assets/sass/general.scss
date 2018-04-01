@@ -1,0 +1,49 @@
+//colors
+
+$red: #bc180e;
+$darkRed: #ac130e;
+$beige: #fff9f7;
+$gold: #f7e6cc;
+$darkGold: #e4c181;
+$blue: #0997d5;
+$darkBlue: #005187;
+$grey: #7b7a78;
+$darkGrey: #5c5c5c;
+
+$regularFontstack: 'Rubik', 'Trebuchet MS', 'Open sans', Helvetica, sans-serif;
+$headsFont: 'Zilla Slab Highlight', cursive;
+
+html {
+  font-family: $regularFontstack;
+  font-size: 18px;
+}
+
+main{
+  min-height: 60vh;
+}
+//breakpoints for responsiveness
+
+$breakpoints:(
+	smallTablet: 560px,
+	largeTablet: 768px,
+	laptop: 1020px,
+	desktop: 1400px
+);
+
+ @mixin breakpoint($point) {
+ 	@if map-has-key($breakpoints, $point){
+  	 @if $point == smallTablet {
+    	 @media (min-width: 560px) { @content ; }
+  	}
+  	 @else if $point == largeTablet {
+    	 @media (min-width: 768px) { @content ; }
+  	}
+   	 @else if $point == laptop {
+    	 @media (min-width: 1020px) { @content ; }
+  	}
+
+  	@else if $point == desktop {
+    	 @media (min-width: 1400px) { @content ; }
+  	}
+  }
+}
