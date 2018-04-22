@@ -13,6 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    @if ($errors->any())
+                        @foreach($errors->all() as $error)
+                            <p class="alert alert-danger">{{ $error }}</p>
+                        @endforeach
+                    @endif
+
                     <form method="POST">
                         {{ csrf_field() }}
                         @foreach ($groups as $groupName => $rounds)
@@ -45,9 +52,9 @@
                                                 </td>
                                                 <td style="text-align: center;">
                                                     @if($complexGame)
-                                                        <input type="text" style="width: 20px; text-align: center;" name="bet_first_team_result_{{$match['id']}}" value="{{ $match['bet_first_team_goals'] ?? '' }}" > - <input type="text" style="width: 20px; text-align: center;" name="bet_second_team_result_{{$match['id']}}" value="{{ $match['bet_second_team_goals'] ?? '' }}" >
+                                                        <input type="text" style="width: 20px; text-align: center;" name="match[{{$match['id']}}][bet_first_team_result]" value="{{ $match['bet_first_team_goals'] ?? '' }}" > - <input type="text" style="width: 20px; text-align: center;" name="match[{{$match['id']}}][bet_second_team_result]" value="{{ $match['bet_second_team_goals'] ?? '' }}" >
                                                     @else
-                                                        <input type="text" style="width: 40px; text-align: center;" name="bet_first_team_result_{{$match['id']}}" value="{{ $match['bet_result'] ?? '' }}" >
+                                                        <input type="text" style="width: 40px; text-align: center;" name="match[{{$match['id']}}][bet_match_result]" value="{{ $match['bet_result'] ?? '' }}" >
                                                     @endif
                                                 </td>
                                                 <td style="text-align: center;">

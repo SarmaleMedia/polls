@@ -58,9 +58,11 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{ url('/bets') }}">Bets</a>
+                                        <a href="{{ url('/matches') }}">Matches</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 

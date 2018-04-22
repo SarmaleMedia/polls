@@ -101,4 +101,35 @@ class Bet extends Model
 
         return $parsedMatches;
     }
+
+    /**
+     * @param array $arrayData
+     * @param int $userId
+     */
+    public static function saveBets(array $arrayData, int $userId)
+    {
+        foreach ($arrayData['match'] as $matchId => $match) {
+            if ((isset($match['bet_first_team_result']) && $match['bet_first_team_result'] != '')
+                || (isset($match['bet_first_team_result']) && $match['bet_match_result'] != '')) {
+
+                $matchRow = self::where(['user_id' => $userId, 'match_id' => $matchId])->first();
+                if (isset($matchRow->id)) {
+                    $matchRow->first_team_goals = $match['bet_first_team_result'] ?? null;
+                    $matchRow->second_team_goals = $match['bet_second_team_result'] ?? null;
+                    $matchRow->result = $match['bet_match_result'] ?? null;
+                    $matchRow->save();
+                } else {
+                    self::create([
+                        'user_id' => $userId,
+                        'match_id' => $matchId,
+                        'first_team_goals' => $match['bet_first_team_result'] ?? null,
+                        'second_team_goals' => $match['bet_second_team_result'] ?? null,
+                        'result' => $match['bet_match_result'] ?? null,
+                    ]);
+                }
+            }
+        }
+
+
+    }
 }

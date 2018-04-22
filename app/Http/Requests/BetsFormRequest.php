@@ -28,9 +28,9 @@ class BetsFormRequest extends FormRequest
         $matches = Match::all()->toArray();
 
         foreach ($matches as $match) {
-            $rules['bet_first_team_result_' . $match['id']] = 'numeric|between:0,30';
-            $rules['bet_second_team_result_' . $match['id']] = 'numeric|between:0,30';
-            $rules['bet_second_team_result_' . $match['id']] = 'regex:/[x01]{1}/i';
+            $rules['match.' . $match['id'] . '.bet_first_team_result'] = 'required_with:match.' . $match['id'] . '.bet_second_team_result|nullable|numeric';
+            $rules['match.' . $match['id'] . '.bet_second_team_result'] = 'required_with:match.' . $match['id'] . '.bet_first_team_result|nullable|numeric';
+            $rules['match.' . $match['id'] . 'bet_match_result.'] = 'nullable|regex:/[x01]{1}/i';
         }
 
         return $rules;

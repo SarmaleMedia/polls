@@ -20,9 +20,7 @@ class BetsController extends Controller
     }
 
     /**
-     *
      * @param Request $request
-     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
@@ -37,10 +35,15 @@ class BetsController extends Controller
         return view('matches.bets', ['groups' => $bets, 'complexGame' => $complexGame]);
     }
 
+    /**
+     * @param BetsFormRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function saveBets(BetsFormRequest $request)
     {
-        echo '<pre>';
-        print_r($request->all());
-        die();
+        $user = Auth::user();
+        Bet::saveBets($request->all(), $user->id);
+
+        return redirect('/bets')->with('status', 'The results were successfully saved!');
     }
 }
