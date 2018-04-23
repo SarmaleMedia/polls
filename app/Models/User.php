@@ -26,6 +26,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\WC2018\Models\Role[] $roles
+ * @property int|null $group_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\User whereGroupId($value)
  */
 class User extends Authenticatable
 {
@@ -37,7 +39,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'group_id'
     ];
 
     /**

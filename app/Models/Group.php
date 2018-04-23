@@ -18,11 +18,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Group whereUniqueCode($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Group whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $complex
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Group whereComplex($value)
  */
 class Group extends Model
 {
     protected $fillable = [
         'name',
-        'unique_code'
+        'unique_code',
+        'complex'
     ];
 }

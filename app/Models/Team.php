@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereWcGroupPoints($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereWcGroupRank($value)
  * @mixin \Eloquent
+ * @property string $flag_path
+ * @method static \Illuminate\Database\Eloquent\Builder|\WC2018\Models\Team whereFlagPath($value)
  */
 class Team extends Model
 {

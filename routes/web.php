@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/matches', 'MatchesController@list')->name('matches');
 Route::get('/bets', 'BetsController@index')->name('bets');
 Route::post('/bets', 'BetsController@saveBets')->name('save_bets');
+
+Route::get('/settings/{groupId?}', 'GroupsController@settings')->name('group_settings');
